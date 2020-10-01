@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post页面</title>
+</head>
+
+<body>
+    <div>这里是post页面</div>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            console.log('onreadystatechange', xhr.readyState);
+        }
+        xhr.open('POST', 'http://localhost:8080/post');
+        //指定请求体的类型
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = () => {
+            console.log('readyState', xhr.readyState);
+            console.log('status', xhr.status);
+            console.log('statusText', xhr.statusText);
+            console.log('getAllResponseHeaders', xhr.getAllResponseHeaders());
+            console.log('response', xhr.response);
+        }
+        xhr.send('{"name":"zhufeng","age":11}');
+    </script>
+</body>
+
+</html>
