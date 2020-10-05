@@ -47,6 +47,15 @@
 
 ## 5. 转换箭头函数
 
+- 访问者模式visitor对于某个对象或者一组对象，不同的访问者，产生的结果不同，执行操作也不同
+- @babel/core Babel的编译器，核心API都在这里面，比如常见的transform、parser
+- babylon Babel 的解析器
+- babel-types 用于AST节点的Lodash工具库，它包含了构造、验证以及变换AST节点的方法，对编写处理AST逻辑非常有用
+- babel-traverse 用于对AST的遍历，维护了整棵树的状态，并负责替换、添加、移除节点
+- babel-types-api
+- Babel插件手册
+- babeljs.io babel可视化编辑器
+
 ## 6. 预计算babel插件
 
 ## 7. 把类编译成Function
@@ -63,7 +72,21 @@
 
 #### 9.1 解析过程
 
+AST整个解析过程分为两个步骤：
+
+- 分词：将整个代码字符串分割成语法单元数组
+- 语法分析：建立分析语法单元之间的关系
+
 #### 9.2 语法单元
+
+JavaScript 代码中的语法单元主要包括以下这么几种：
+
+- 关键字：const、let、var等
+- 标识符：可能是一个变量，也可能是if、else这些关键字
+- 运算符
+- 数字
+- 空格
+- 注释
 
 #### 9.3 词法分析
 
